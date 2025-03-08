@@ -1,0 +1,16 @@
+# Node.js
+node_modules/
+npm-debug.log
+package-lock.json
+
+# CSS preprocesado
+*.sass-cache/
+*.scssc
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Otros
+dist/
+.vscode/
