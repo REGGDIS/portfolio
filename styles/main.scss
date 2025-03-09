@@ -1,7 +1,13 @@
+// ✅ Importar el módulo color de Sass
+@use "sass:color";
+
 // ✅ Variables para colores y estilos
-$primary-color: #4caf50;
-$background-color: #f4f4f4;
-$text-color: #333;
+$primary-color: #003049;
+$accent-color: #D62828;
+$secondary-color: #F77F00;
+$highlight-color: #FCBF49;
+$background-color: #EAE2B7;
+$text-color: #003049;
 $font-stack: "Arial", sans-serif;
 
 // ✅ Reset básico
@@ -19,7 +25,7 @@ body {
 
 // ✅ Navbar
 .navbar {
-  background-color: #ffffff;
+  background-color: $primary-color;
   padding: 1rem 2rem;
   position: fixed;
   width: 100%;
@@ -36,7 +42,7 @@ body {
   .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: $primary-color;
+    color: $highlight-color;
   }
 
   .nav-links {
@@ -47,13 +53,13 @@ body {
     li {
       a {
         text-decoration: none;
-        color: $text-color;
+        color: $highlight-color;
         font-size: 1rem;
         font-weight: 500;
         transition: color 0.3s ease;
 
         &:hover {
-          color: $primary-color;
+          color: $accent-color;
         }
       }
     }
@@ -67,27 +73,27 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: #e8f5e9;
+  background-color: $highlight-color;
 
   .container {
     h1 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
-      color: $text-color;
+      color: $primary-color;
 
       .highlight {
-        color: $primary-color;
+        color: $accent-color;
       }
     }
 
     p {
       font-size: 1.25rem;
       margin-bottom: 1.5rem;
-      color: darken($text-color, 20%);
+      color: color.adjust($primary-color, $lightness: -20%);
     }
 
     .cta-btn {
-      background-color: $primary-color;
+      background-color: $accent-color;
       color: #fff;
       padding: 0.75rem 2rem;
       border: none;
@@ -97,7 +103,7 @@ body {
       transition: background-color 0.3s ease;
 
       &:hover {
-        background-color: darken($primary-color, 10%);
+        background-color: color.adjust($accent-color, $lightness: -10%);
       }
     }
   }
