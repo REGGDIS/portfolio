@@ -20,28 +20,32 @@ body {
   z-index: 1000;
 }
 .navbar .container {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
+  flex-direction: row !important;
   justify-content: space-between;
-  align-items: center;
+  align-items: center !important;
 }
 .navbar .logo {
   font-size: 1.5rem;
   font-weight: bold;
   color: #FCBF49;
+  text-decoration: none;
 }
-.navbar .nav-links {
+.navbar nav ul {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
 }
-.navbar .nav-links li a {
-  text-decoration: none;
+.navbar nav ul li a {
   color: #FCBF49;
   font-size: 1rem;
   font-weight: 500;
+  text-decoration: none;
   transition: color 0.3s ease;
 }
-.navbar .nav-links li a:hover {
+.navbar nav ul li a:hover {
   color: #D62828;
 }
 
@@ -64,7 +68,7 @@ body {
 .hero .container p {
   font-size: 1.25rem;
   margin-bottom: 1.5rem;
-  color: hsl(200.5479452055, 100%, -5.6862745098%);
+  color: rgb(0, 38.4, 58.4);
 }
 .hero .container .cta-btn {
   background-color: #D62828;
@@ -80,19 +84,65 @@ body {
   background-color: rgb(171.031496063, 31.968503937, 31.968503937);
 }
 
+.projects {
+  padding: 5rem 0;
+  background-color: #EAE2B7;
+}
+.projects h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #003049;
+}
+.projects .projects-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.projects .projects-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  max-width: 100%;
+}
+.projects .project-card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 0 1 340px;
+  min-width: 320px;
+  max-width: 340px;
+  opacity: 0;
+  visibility: hidden;
+}
+.projects .project-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #D62828;
+}
+.projects .project-card p {
+  font-size: 1rem;
+  color: rgb(0, 38.4, 58.4);
+}
+.projects .project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
 @media (max-width: 768px) {
-  .nav-links {
-    gap: 1rem;
+  .projects-grid {
+    flex-wrap: wrap;
+  }
+  .projects-grid .project-card {
+    flex: 0 1 100%;
+    max-width: 100%;
+  }
+  nav ul {
     flex-direction: column;
-  }
-  .hero .container h1 {
-    font-size: 2rem;
-  }
-  .hero .container p {
-    font-size: 1rem;
-  }
-  .hero .container .cta-btn {
-    font-size: 0.9rem;
   }
 }
 
