@@ -78,12 +78,15 @@ body {
   justify-content: center;
   text-align: center;
   background-color: $highlight-color;
+  position: relative;
 
   .container {
     h1 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
       color: $primary-color;
+      position: relative;
+      z-index: 1;
 
       .highlight {
         color: $accent-color;
@@ -110,6 +113,17 @@ body {
         background-color: color.adjust($accent-color, $lightness: -10%);
       }
     }
+  }
+
+  .hero-illustration {
+    max-width: 450px;
+    height: auto;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 0;
+    opacity: 0.9;
+    pointer-events: none;
   }
 }
 
@@ -214,5 +228,18 @@ body {
 
   nav ul {
     flex-direction: column;
+  }
+
+  .hero-illustration {
+    max-width: 200px;
+    max-height: 200px;
+    bottom: 1rem;
+    right: 1rem;
+    right: 1rem;
+    opacity: 0.6;
+  }
+
+  .hero .container {
+    padding: 0 1rem;
   }
 }

@@ -45,6 +45,19 @@ gsap.from('.hero .cta-btn', {
     }
 });
 
+gsap.from('.hero-illustration', {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    delay: 0.8,
+    ease: 'power2.out',
+    scrollTrigger: {
+        trigger: '.hero-illustration',
+        start: 'top 90%',
+        toggleActions: 'play none none none'
+    }
+});
+
 // ✅ Animación de entrada en las tarjetas de Proyectos
 document.querySelectorAll('.project-card').forEach((card, index) => {
     gsap.fromTo(
