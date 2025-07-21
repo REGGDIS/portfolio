@@ -1,8 +1,5 @@
-import { gsap } from "../node_modules/gsap/index.js";
-import { ScrollTrigger } from "../node_modules/gsap/ScrollTrigger.js";
-
-// ✅ Registrar el plugin de ScrollTrigger (solo en el navegador)
-if (typeof window !== 'undefined') {
+// ✅ Registrar ScrollTrigger si está disponible
+if (typeof ScrollTrigger !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
 }
 
@@ -74,9 +71,9 @@ document.querySelectorAll('.project-card').forEach((card, index) => {
             ease: 'power2.out',
             scrollTrigger: {
                 trigger: card,
-                start: 'top 80%', // ✅ Activa la animación cuando la tarjeta entre al viewport
+                start: 'top 80%',
                 toggleActions: 'play none none none',
-                once: true // ✅ Solo una vez
+                once: true
             }
         }
     );

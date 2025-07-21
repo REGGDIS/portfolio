@@ -112,9 +112,9 @@ body {
   margin: 0 auto;
 }
 .projects .projects-grid {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
   justify-content: center;
   align-items: stretch;
   width: 100%;
@@ -174,7 +174,7 @@ body {
 
 @media (max-width: 768px) {
   .projects-grid {
-    flex-wrap: wrap;
+    grid-template-columns: 1fr;
   }
   .projects-grid .project-card {
     flex: 0 1 100%;
