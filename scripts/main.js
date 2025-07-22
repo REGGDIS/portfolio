@@ -1,3 +1,7 @@
+const contactForm = document.querySelector(".contact-form");
+const successMessage = document.querySelector(".form-success");
+const formNote = document.querySelector(".form-note");
+
 // ✅ Registrar ScrollTrigger si está disponible
 if (typeof ScrollTrigger !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
@@ -157,3 +161,49 @@ gsap.from("#contact .contact-links a", {
         toggleActions: "play none none none"
     }
 });
+
+// ✅ Lógica del formulario de contacto
+if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+        e.preventDefault(); // evita recarga
+
+        const formData = new FormData(contactForm);
+
+        fetch(contactForm.action, {
+            method: "POST",
+            body: formData,
+            headers: {
+                Accept: "application/json"
+            }
+        }).then((response) => {
+            if (response.ok) {
+                // Oculta el formulario y el mensaje previo
+                gsap.to([contactForm, formNote], {
+                    opacity: 0,
+                    y: -20,
+                    duration: 0.5,
+                    onComplete: () => {
+                        contactForm.style.display = "none";
+                        formNote.style.display = "none";
+
+                        // Muestra el mensaje de éxito
+                        successMessage.style.display = "block";
+                        gsap.fromTo(successMessage, {
+                            opacity: 0,
+                            y: 30
+                        }, {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.8,
+                            ease: "power2.out"
+                        });
+                    }
+                });
+            } else {
+                alert("Hubo un error. Intenta nuevamente.");
+            }
+        }).catch(() => {
+            alert("No se pudo enviar el formulario. Intenta más tarde.");
+        });
+    });
+}

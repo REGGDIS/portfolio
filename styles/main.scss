@@ -335,6 +335,20 @@ body {
     color: $text-color;
   }
 
+  .form-success {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: $primary-color;
+
+    p {
+      background-color: color.adjust($highlight-color, $lightness: 10%);
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      display: inline-block;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+
   .contact-info {
     margin-top: 2rem;
 
