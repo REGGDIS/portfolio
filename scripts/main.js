@@ -117,15 +117,43 @@ gsap.from("#contact h2", {
     }
 });
 
-gsap.from("#contact p, #contact .contact-info p", {
+gsap.from("#contact p", {
     opacity: 0,
     y: 20,
     duration: 1,
-    delay: 0.3,
-    stagger: 0.2,
+    delay: 0.2,
+    ease: "power2.out",
     scrollTrigger: {
         trigger: "#contact",
         start: "top 80%",
+        toggleActions: "play none none none"
+    }
+});
+
+gsap.from("#contact .contact-form input, #contact .contact-form textarea, #contact .contact-form button", {
+    opacity: 0,
+    y: 30,
+    duration: 1,
+    delay: 0.4,
+    stagger: 0.2,
+    ease: "power2.out",
+    scrollTrigger: {
+        trigger: "#contact .contact-form",
+        start: "top 85%",
+        toggleActions: "play none none none"
+    }
+});
+
+gsap.from("#contact .contact-links a", {
+    opacity: 0,
+    y: 20,
+    duration: 0.8,
+    stagger: 0.2,
+    delay: 0.6,
+    ease: "power2.out",
+    scrollTrigger: {
+        trigger: "#contact .contact-links",
+        start: "top 90%",
         toggleActions: "play none none none"
     }
 });
