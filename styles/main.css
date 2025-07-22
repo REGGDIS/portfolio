@@ -172,6 +172,25 @@ body {
   background-color: #a31e1e;
 }
 
+.about {
+  padding: 5rem 0;
+  background-color: #FCBF49;
+}
+.about h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #003049;
+}
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #003049;
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;

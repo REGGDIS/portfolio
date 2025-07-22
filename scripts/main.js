@@ -78,3 +78,29 @@ document.querySelectorAll('.project-card').forEach((card, index) => {
         }
     );
 });
+
+// ✅ Animación de entrada en la sección de Sobre mí
+gsap.from("#about h2", {
+    opacity: 0,
+    y: 40,
+    duration: 1,
+    ease: "power2.out",
+    scrollTrigger: {
+        trigger: "#about h2",
+        start: "top 80%",
+        toggleAttribute: "play none none none"
+    }
+});
+
+gsap.from("#about p", {
+    opacity: 0,
+    y: 40,
+    duration: 1,
+    delay: 0.2,
+    ease: "power2.out",
+    scrollTrigger: {
+        trigger: "#about p",
+        start: "top 80%",
+        toggleActions: "play none none none"
+    }
+});

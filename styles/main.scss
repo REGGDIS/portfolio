@@ -215,6 +215,28 @@ body {
   }
 }
 
+// ✅ About Section
+.about {
+  padding: 5rem 0;
+  background-color: $highlight-color;
+
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: $primary-color;
+  }
+
+  p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: $primary-color;
+    text-align: center;
+  }
+}
+
 // ✅ Responsive Design
 @media (max-width: 768px) {
   .projects-grid {
