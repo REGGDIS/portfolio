@@ -113,12 +113,9 @@ body {
 }
 .projects .projects-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  justify-content: center;
-  align-items: stretch;
   width: 100%;
-  max-width: 100%;
 }
 .projects .project-card {
   background-color: #ffffff;
@@ -126,9 +123,6 @@ body {
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  flex: 0 1 340px;
-  min-width: 320px;
-  max-width: 340px;
   opacity: 0;
   visibility: hidden;
 }
@@ -314,13 +308,6 @@ body {
 }
 
 @media (max-width: 768px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-  .projects-grid .project-card {
-    flex: 0 1 100%;
-    max-width: 100%;
-  }
   nav ul {
     flex-direction: column;
   }
