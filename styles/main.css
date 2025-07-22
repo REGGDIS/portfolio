@@ -176,19 +176,50 @@ body {
   padding: 5rem 0;
   background-color: #FCBF49;
 }
-.about h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: #003049;
-}
-.about p {
-  max-width: 800px;
+.about .about-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1000px;
   margin: 0 auto;
+}
+.about .about-image {
+  flex: 1 1 300px;
+  text-align: center;
+}
+.about .about-image img {
+  max-width: 250px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.about .about-content {
+  flex: 2 1 400px;
+}
+.about .about-content h2 {
+  font-size: 2.5rem;
+  color: #003049;
+  margin-bottom: 1rem;
+}
+.about .about-content p {
   font-size: 1.2rem;
   line-height: 1.8;
   color: #003049;
-  text-align: center;
+  margin-bottom: 2rem;
+}
+.about .about-content .skills h3 {
+  font-size: 1.5rem;
+  color: #D62828;
+  margin-bottom: 1rem;
+}
+.about .about-content .skills ul {
+  list-style: none;
+  padding-left: 0;
+}
+.about .about-content .skills ul li {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #003049;
 }
 
 @media (max-width: 768px) {

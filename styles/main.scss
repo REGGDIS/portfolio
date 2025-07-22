@@ -220,20 +220,60 @@ body {
   padding: 5rem 0;
   background-color: $highlight-color;
 
-  h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: $primary-color;
+  .about-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
   }
 
-  p {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: $primary-color;
+  .about-image {
+    flex: 1 1 300px;
     text-align: center;
+
+    img {
+      max-width: 250px;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .about-content {
+    flex: 2 1 400px;
+
+    h2 {
+      font-size: 2.5rem;
+      color: $primary-color;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: $primary-color;
+      margin-bottom: 2rem;
+    }
+
+    .skills {
+      h3 {
+        font-size: 1.5rem;
+        color: $accent-color;
+        margin-bottom: 1rem;
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 0;
+
+        li {
+          font-size: 1.1rem;
+          margin-bottom: 0.5rem;
+          color: $text-color;
+        }
+      }
+    }
   }
 }
 

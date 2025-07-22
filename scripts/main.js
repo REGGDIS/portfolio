@@ -79,28 +79,29 @@ document.querySelectorAll('.project-card').forEach((card, index) => {
     );
 });
 
-// ✅ Animación de entrada en la sección de Sobre mí
-gsap.from("#about h2", {
+// ✅ Animación de la sección Sobre mí
+gsap.from("#about .about-image img", {
     opacity: 0,
-    y: 40,
-    duration: 1,
-    ease: "power2.out",
-    scrollTrigger: {
-        trigger: "#about h2",
-        start: "top 80%",
-        toggleAttribute: "play none none none"
-    }
-});
-
-gsap.from("#about p", {
-    opacity: 0,
-    y: 40,
+    scale: 0.8,
     duration: 1,
     delay: 0.2,
     ease: "power2.out",
     scrollTrigger: {
-        trigger: "#about p",
+        trigger: "#about",
         start: "top 80%",
         toggleActions: "play none none none"
     }
 });
+
+gsap.from("#about .about-content", {
+    opacity: 0,
+    x: 100,
+    duration: 1,
+    ease: "power2.out",
+    scrollTrigger: {
+        trigger: "#about",
+        start: "top 80%",
+        toggleActions: "play none none none"
+    }
+});
+
