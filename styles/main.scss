@@ -142,6 +142,7 @@ body {
   .projects-wrapper {
     max-width: 1000px;
     margin: 0 auto;
+    padding: 0 1rem;
   }
 
   .projects-grid {
@@ -383,6 +384,20 @@ body {
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .navbar {
+    padding: 0.5rem 1rem;
+    text-align: center;
+
+    .logo {
+      font-size: 1.2rem;
+      display: block;
+      margin-bottom: 0.5rem;
+      transition: all 0.3s ease;
+    }
   }
 
   .hero-illustration {
