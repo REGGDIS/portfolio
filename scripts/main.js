@@ -105,3 +105,27 @@ gsap.from("#about .about-content", {
     }
 });
 
+// ✅ Animación de la sección Contacto
+gsap.from("#contact h2", {
+    opacity: 0,
+    y: 40,
+    duration: 1,
+    scrollTrigger: {
+        trigger: "#contact",
+        start: "top 80%",
+        toggleActions: "play none none none"
+    }
+});
+
+gsap.from("#contact p, #contact .contact-info p", {
+    opacity: 0,
+    y: 20,
+    duration: 1,
+    delay: 0.3,
+    stagger: 0.2,
+    scrollTrigger: {
+        trigger: "#contact",
+        start: "top 80%",
+        toggleActions: "play none none none"
+    }
+});

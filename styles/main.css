@@ -224,6 +224,37 @@ body {
   color: #003049;
 }
 
+.contact {
+  padding: 5rem 0;
+  background-color: #EAE2B7;
+  text-align: center;
+}
+.contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #003049;
+}
+.contact p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #003049;
+}
+.contact .contact-info {
+  margin-top: 2rem;
+}
+.contact .contact-info a {
+  color: #D62828;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.35s ease;
+}
+.contact .contact-info a:hover {
+  color: rgb(171.031496063, 31.968503937, 31.968503937);
+}
+.contact .contact-info p {
+  margin: 0.5rem 0;
+}
+
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;

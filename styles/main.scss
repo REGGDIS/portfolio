@@ -279,6 +279,44 @@ body {
   }
 }
 
+// ✅ Contact Section
+.contact {
+  padding: 5rem 0;
+  background-color: $background-color;
+  text-align: center;
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: $primary-color;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: $text-color;
+  }
+
+  .contact-info {
+    margin-top: 2rem;
+
+    a {
+      color: $accent-color;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.35s ease;
+
+      &:hover {
+        color: color.adjust($accent-color, $lightness: -10%);
+      }
+    }
+
+    p {
+      margin: 0.5rem 0;
+    }
+  }
+}
+
 // ✅ Responsive Design
 @media (max-width: 768px) {
   .projects-grid {
