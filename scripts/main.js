@@ -1,6 +1,8 @@
 const contactForm = document.querySelector(".contact-form");
 const successMessage = document.querySelector(".form-success");
 const formNote = document.querySelector(".form-note");
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
 
 // ✅ Registrar ScrollTrigger si está disponible
 if (typeof ScrollTrigger !== 'undefined') {
@@ -205,5 +207,13 @@ if (contactForm) {
         }).catch(() => {
             alert("No se pudo enviar el formulario. Intenta más tarde.");
         });
+    });
+}
+
+// ✅ Lógica del menú hamburguesa
+if (hamburger && navLinks) {
+    hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        hamburger.classList.toggle("open");
     });
 }
