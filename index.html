@@ -3,18 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portafolio de desarrollo de software de REG. Proyectos de frontend y backend con tecnologías modernas.">
-    <link rel="stylesheet" href="./styles/main.css" />
-    <link rel="icon" href="./assets/icons/favicon.ico" type="image/x-icon">
-    <title>Mi Portafolio - REG</title>
+    <meta name="description" content="Portafolio de Roberto González (REG). Proyectos web y de escritorio: Java (Spring Boot, JavaFX), Python (Django, Tkinter), React, Typescript y más." />
+
+    <title>REG | Desarrollador de Software (Web & Desktop)</title>
+
+    <!-- CSS con preload para mejor LCP -->
+    <link rel="preload" href="./styles/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="./styles/main.css"></noscript>
+
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/icons/favicon.ico" type="image/x-icon" />
+
+    <!-- Open Graph / Twitter -->
+     <meta property="og:title" content="REG | Desarrollador de Software" />
+     <meta property="og:description" content="Proyectos en Java, Python y React. Web y escritorio." />
+     <meta property="og:type" content="website" />
+     <meta property="og:url" content="https://reggdis.github.io/portfolio/" />
+     <meta property="og:image" content="https://reggdis.github.io/portfolio/assets/images/og-cover.jpg" />
+     <meta name="twitter:card" content="summary_large_image" />
+     <meta name="twitter:title" content="REG | Desarrollador de Software" />
+     <meta name="twitter:description" content="Web & Desktop: Spring Boot, JavaFX, Django, React." />
+     <meta name="twitter:image" content="https://reggdis.github.io/portfolio/assets/images/og-cover.jpg" />
+
+     <!-- JSON-LD -->
+      <script type="application/ld+json">
+        {
+            "@context":"https://schema.org",
+            "@type":"Person",
+            "name":"Roberto González",
+            "url":"https://reggdis.github.io/portfolio/",
+            "sameAs":["https://github.com/REGGDIS","https://www.linkedin.com/in/roberto-emilio-gonz%C3%A1lez-guzm%C3%A1n-39ab9420a/"],
+            "jobTitle":"Desarrollador de Software",
+            "knowsAbout":["Java","Spring Boot","JavaFX","Python","Django","React","TypeScript","MySQL","PostgreSQL","SQLite"]
+        }
+      </script>
+
+      <!-- PWA -->
+       <link rel="manifest" href="./manifest.webmanifest" />
+       <meta name="theme-color" content="#111827" />
 </head>
 <body>
+    <!-- Skip link accesible -->
+     <a class="skip-link" href="#main">Saltar al contenido</a>
+
     <!-- ✅ Navbar -->
-    <header class="navbar">
+    <header class="navbar" role="banner">
         <div class="container">
             <a href="#hero" class="logo">REGDEVS</a>
 
-            <nav>
+            <nav role="navigation" aria-label="Principal">
                 <ul class="nav-links">
                     <li><a href="#hero">Inicio</a></li>
                     <li><a href="#projects">Proyectos</a></li>
@@ -22,20 +59,24 @@
                     <li><a href="#contact">Contacto</a></li>
                 </ul>
             </nav>
+
+            <!-- Toggle de tema -->
+             <button id="themeBtn" aria-label="Cambiar tema" title="Cambiar tema">🌓</button>
         </div>
     </header>
 
-    <main>
+    <main id="main">
         <!-- ✅ Hero Section -->
          <section id="hero" class="hero">
             <div class="container hero-grid">
                 <div class="hero-text">
                     <h1>¡Hola! Soy <span class="highlight">REG</span></h1>
-                    <p>Desarrollador de Software | Frontend & Backend.<br>Creando soluciones web y de escritorio modernas, eficientes y con gran atención al detalle.</p>
+                    <p>Desarrollador de Software | Frontend & Backend.</p>
                     <a href="#projects" class="cta-btn">Ver Proyectos</a>
                 </div>
                 <div class="hero-image">
-                    <img src="./assets/images/hero1.png" alt="Ilustración decorativa">
+                    <!-- Se puede cambiar a <picture> con AVIF/WebP más adelante -->
+                    <img src="./assets/images/hero1.png" alt="Ilustración decorativa" loading="lazy" width="640" height="480">
                 </div>
             </div>
          </section>
@@ -44,72 +85,92 @@
         <section id="projects" class="projects">
             <div class="container">
                 <h2>Mis Proyectos</h2>
+
+                <!-- Filtros -->
+                <div class="filters" aria-label="Filtrar por tecnología">
+                    <button class="filter-btn active" data-tech="all">Todos</button>
+                    <button class="filter-btn" data-tech="java">Java</button>
+                    <button class="filter-btn" data-tech="spring">Spring</button>
+                    <button class="filter-btn" data-tech="python">Python</button>
+                    <button class="filter-btn" data-tech="django">Django</button>
+                    <button class="filter-btn" data-tech="react">React</button>
+                    <button class="filter-btn" data-tech="typescript">Typescript</button>
+                </div>
+
                 <div class="projects-wrapper">
                     <div class="projects-grid">
-                        <div class="project-card">
-                            <img src="./assets/images/proyecto7-thumbnail.png" alt="Captura del proyecto 5" class="project-image">
+                        <div class="project-card" data-tech="java javafx mysql">
+                            <img src="./assets/images/proyecto7-thumbnail.png" alt="Sistema de Autenticación en JavaFX" class="project-image" loading="lazy" width="640" height="360">
                             <div class="project-content">
                                 <h3>Sistema de Autenticación en Java (JavaFX + MySQL)</h3>
                                 <p>Aplicación de escritorio desarrollada en Java utilizando JavaFX y una arquitectura MVC, que permite autenticación de usuarios con distintos roles (admin y user).</p>
-                                <a href="https://github.com/REGGDIS/auth-system-java" target="_blank" class="project-link">Ver repositorio</a>
+                                <a href="https://github.com/REGGDIS/auth-system-java" target="_blank" rel="noopener" class="project-link">Ver repositorio</a>
                             </div>
                         </div>
-                        <div class="project-card">
-                            <img src="./assets/images/proyecto6-thumbnail.png" alt="Captura del proyecto 5" class="project-image">
+
+                        <div class="project-card" data-tech="java spring thymeleaf mysql">
+                            <img src="./assets/images/proyecto6-thumbnail.png" alt="Sistema de Gestión Logística en Spring Boot" class="project-image" loading="lazy" width="640" height="360">
                             <div class="project-content">
                                 <h3>Sistema de Gestión Logística - Spring Boot</h3>
                                 <p>Sistema web CRUD desarrollado con Spring Boot, Thymeleaf y MySQL, que permite gestionar paquetes, asignar rutas de envío y realizar seguimiento del estado de los envíos.</p>
-                                <a href="https://github.com/REGGDIS/logistica-app" target="_blank" class="project-link">Ver repositorio</a>
+                                <a href="https://github.com/REGGDIS/logistica-app" target="_blank" rel="noopener" class="project-link">Ver repositorio</a>
                             </div>
                         </div>
-                        <div class="project-card">
-                            <img src="./assets/images/proyecto1-thumbnail.png" alt="Captura del proyecto 1" class="project-image">
+
+                        <div class="project-card" data-tech="html css javascript">
+                            <img src="./assets/images/proyecto1-thumbnail.png" alt="Juego Battleship en HTML, CSS y JS" class="project-image" loading="lazy" width="640" height="360">
                             <div class="project-content">
                                 <h3>Battleship Game</h3>
-                                <p>Implementación sencilla del clásico juego de Batalla Naval, utilizando tecnologías como HTML, CSS y JavaScript. La interfaz permite a los jugadores colocar sus barcos en un tablero y luego intentar hundir los barcos del oponente mediante disparos estratégicos.</p>
-                                <a href="https://github.com/REGGDIS/battleship-game" target="_blank" class="project-link">Ver repositorio</a>
+                                <p>Implementación sencilla del clásico juego de Batalla Naval, utilizando HTML, CSS y JavaScript. Coloca barcos y hunde los del oponente.</p>
+                                <a href="https://github.com/REGGDIS/battleship-game" target="_blank" rel="noopener" class="project-link">Ver repositorio</a>
                             </div>
                         </div>
-                        <div class="project-card">
-                            <img src="./assets/images/proyecto2-thumbnail.png" alt="Captura del proyecto 2" class="project-image">
+
+                        <div class="project-card" data-tech="python tkinter sqlite reportlab">
+                            <img src="./assets/images/proyecto2-thumbnail.png" alt="Reserva hotel App en Python con Tkinter" class="project-image" loading="lazy" width="640" height="360">
                             <div class="project-content">
                                 <h3>Reserva hotel App</h3>
-                                <p>Aplicación de escritorio desarrollada en Python con Tkinter, SQLite y ReportLab, orientada a la gestión eficiente de reservas hoteleras. Ofrece funcionalidades como control de usuarios, generación de reportes en PDF, gráficos estadísticos y manejo de clientes.</p>
-                                <a href="https://github.com/REGGDIS/reserva-hotel" target="_blank" class="project-link">Ver repositorio</a>
+                                <p>Aplicación de escritorio en Python con Tkinter, SQLite y ReportLab para gestionar reservas, generar PDF y ver estadísticas.</p>
+                                <a href="https://github.com/REGGDIS/reserva-hotel" target="_blank" rel="noopener" class="project-link">Ver repositorio</a>
                             </div>
                         </div>
-                        <div class="project-card">
-                            <img src="./assets/images/proyecto3-thumbnail.jpg" alt="Captura del proyecto 3" class="project-image">
+
+                        <div class="project-card" data-tech="react typescript vite">
+                            <img src="./assets/images/proyecto3-thumbnail.jpg" alt="Sitio ACA Logos con React y Typescript" class="project-image" loading="lazy" width="640" height="360">
                             <div class="project-content">
                                 <h3>ACA Logos website</h3>
-                                <p>Solución web desarrollada con React, TypeScript y Vite para el frontend, preparada para integrar un backend con Node.js y Express. Su objetivo es ofrecer una plataforma moderna y eficiente para la gestión de contenidos gráficos de una empresa, destacando por su arquitectura modular y escalable.</p>
-                                <a href="https://github.com/REGGDIS/acalogos-site" target="_blank" class="project-link">Ver repositorio</a>
+                                <p>Frontend con React, TypeScript y Vite, preparado para integrarse con backend Node.js/Express. Arquitectura modular y escalable.</p>
+                                <a href="https://github.com/REGGDIS/acalogos-site" target="_blank" rel="noopener" class="project-link">Ver repositorio</a>
                             </div>
                         </div>
-                        <div class="project-card">
-                            <img src="./assets/images/proyecto4-thumbnail.png" alt="Captura del proyecto 4" class="project-image">
+
+                        <div class="project-card" data-tech="python django">
+                            <img src="./assets/images/proyecto4-thumbnail.png" alt="Reveloper App con Django" class="project-image" loading="lazy" width="640" height="360">
                             <div class="project-content">
                                 <h3>Reveloper App</h3>
-                                <p>Plataforma web desarrollada con Django (Python), HTML y CSS, orientada a evaluar y gestionar el desempeño de desarrolladores en una empresa tecnológica. Permite registrar tareas, proyectos realizados, evaluaciones internas y otros indicadores clave, facilitando un seguimiento estructurado del equipo técnico.</p>
-                                <a href="https://github.com/REGGDIS/reveloper" target="_blank" class="project-link">Ver repositorio</a>
+                                <p>Plataforma web con Django para evaluar y gestionar el desempeño de desarrolladores. Registra proyectos, tareas e indicadores.</p>
+                                <a href="https://github.com/REGGDIS/reveloper" target="_blank" rel="noopener" class="project-link">Ver repositorio</a>
                             </div>
                         </div>
-                        <div class="project-card">
-                            <img src="./assets/images/proyecto5-thumbnail.png" alt="Captura del proyecto 4" class="project-image">
+
+                        <div class="project-card" data-tech="python tkinter exiftool">
+                            <img src="./assets/images/proyecto5-thumbnail.png" alt="Etiquetador de imágenes con Tkinter y ExifTool" class="project-image" loading="lazy" width="640" height="360">
                             <div class="project-content">
                                 <h3>Etiquetador de imagenes</h3>
-                                <p>Aplicación de escritorio desarrollada en Python con Tkinter, diseñada para visualizar y etiquetar imágenes mediante una interfaz intuitiva. Utiliza ExifTool para escribir metadatos directamente en los archivos, lo que permite búsquedas eficientes desde el Explorador de Windows.</p>
-                                <a href="https://github.com/REGGDIS/etiquetador-imagenes" target="_blank" class="project-link">Ver repositorio</a>
+                                <p>App de escritorio con Tkinter para visualizar y etiquetar imágenes. Escribe metadatos con ExifTool y permite búsquedas desde el Explorador.</p>
+                                <a href="https://github.com/REGGDIS/etiquetador-imagenes" target="_blank" rel="noopener" class="project-link">Ver repositorio</a>
                             </div>
                         </div>
-                        <div class="project-card">
-                            <img src="./assets/images/proyecto8-thumbnail.png" alt="Captura del proyecto 4" class="project-image">
+
+                        <div class="project-card" data-tech="java javafx sqlite fts5">
+                            <img src="./assets/images/proyecto8-thumbnail.png" alt="Bloc de notas JavaFX con SQLite FTS5" class="project-image" loading="lazy" width="640" height="360">
                             <div class="project-content">
                                 <h3>Bloc de notas de escritorio en JavaFX + SQLite</h3>
-                                <p>Aplicación de escritorio para tomar y gestionar notas en formato Markdown. Utiliza JavaFX para la interfaz de usuario y SQLite con FTS5 para búsqueda rápida por texto y etiquetas.</p>
-                                <a href="https://github.com/REGGDIS/notesfx" target="_blank" class="project-link">Ver repositorio</a>
+                                <p>Bloc de Notas en Markdown con búsqueda rápida usando SQLite FTS5. UI en JavaFX y gestión por etiquetas.</p>
+                                <a href="https://github.com/REGGDIS/notesfx" target="_blank" rel="noopener" class="project-link">Ver repositorio</a>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -119,7 +180,7 @@
         <section id="about" class="about">
             <div class="container about-grid">
                 <div class="about-image">
-                    <img src="./assets/images/profile.png" alt="Foto de REG" />
+                    <img src="./assets/images/profile.png" alt="Foto de REG" loading="lazy" width="250" height="250" />
                 </div>
                 <div class="about-content">
                     <h2>Sobre mí</h2>
@@ -159,16 +220,26 @@
                 </div>
 
                 <div class="contact-links">
-                    <a href="https://www.linkedin.com/in/roberto-emilio-gonz%C3%A1lez-guzm%C3%A1n-39ab9420a/" target="_blank">🔗 LinkedIn</a>
-                    <a href="https://github.com/REGGDIS" target="_blank">💻 GitHub</a>
+                    <a href="https://www.linkedin.com/in/roberto-emilio-gonz%C3%A1lez-guzm%C3%A1n-39ab9420a/" target="_blank" rel="noopener">🔗 LinkedIn</a>
+                    <a href="https://github.com/REGGDIS" target="_blank" rel="noopener">💻 GitHub</a>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
+     <footer class="footer" role="contentinfo">
+        © <span id="year"></span> REG — Portafolio
+     </footer>
+
+     <!-- Librerías -->
     <script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
-    <script src="./scripts/main.js"></script>
 
+    <!-- Año dinámico y JS principal -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    <script src="./scripts/main.js"></script>
 </body>
 </html>
